@@ -11,7 +11,7 @@ with open(rel("README.md")) as f:
     long_description = f.read()
 
 
-with open(rel("dramatiq_dashboard", "__init__.py"), "r") as f:
+with open(rel("dramatiq_dashboard", "__init__.py")) as f:
     version_marker = "__version__ = "
     for line in f:
         if line.startswith(version_marker):
@@ -23,7 +23,6 @@ with open(rel("dramatiq_dashboard", "__init__.py"), "r") as f:
 
 
 dependencies = [
-    "dataclasses; python_version < '3.7'",
     "dramatiq[redis]>=1.6,<2.0",
     "jinja2>=2",
     "redis>=2.0,<5.0",
@@ -65,10 +64,9 @@ setup(
     packages=["dramatiq_dashboard"],
     include_package_data=True,
     install_requires=dependencies,
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     extras_require=extra_dependencies,
     classifiers=[
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
