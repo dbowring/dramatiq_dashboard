@@ -64,10 +64,9 @@ setup(
     packages=["dramatiq_dashboard"],
     include_package_data=True,
     install_requires=dependencies,
-    python_requires=">=3.8",
+    python_requires=">=3.9",
     extras_require=extra_dependencies,
     classifiers=[
-        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",

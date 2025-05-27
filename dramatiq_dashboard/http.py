@@ -1,7 +1,7 @@
 import re
 from dataclasses import dataclass, field
 from io import BytesIO
-from typing import Dict, Union
+from typing import Union
 from urllib.parse import parse_qsl
 
 HTTP_200 = "200 OK"
@@ -31,11 +31,11 @@ def make_request_headers(environ):
 class Request:
     method: str
     path: str
-    params: Dict[str, str]
-    headers: Dict[str, str]
+    params: dict[str, str]
+    headers: dict[str, str]
     body: BytesIO
 
-    _post_data: Dict[str, str] = None
+    _post_data: dict[str, str] = None
 
     @classmethod
     def from_environ(cls, environ):
